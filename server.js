@@ -12,6 +12,11 @@ app.get("/", (_req, res) => {
   res.status(200).send("OK");
 });
 
+app.get("/auth/callback", (req, res) => {
+  const code = req.query.code;
+  res.status(200).send(code ? `OAuth code received: ${code}` : "OAuth callback OK");
+});
+
 // 使用者解除授權你的 App 時，Meta 會打這支
 app.post("/meta/uninstall", (req, res) => {
   console.log("Uninstall callback received");

@@ -2,7 +2,7 @@ import express from "express";
 import crypto from "crypto";
 
 const app = express();
-const PORT = Number(process.env.PORT || 3000);
+const PORT = Number(process.env.PORT || 8080);
 const HOST = "0.0.0.0";
 
 app.use(express.urlencoded({ extended: true }));
